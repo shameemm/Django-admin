@@ -1,0 +1,70 @@
+{% extends 'base.html'%} {% block content%}
+
+
+<nav class="navbar navbar-light border-bottom bg-light">
+  <div class="container-fluid d-flex">
+    <span class="navbar-brand mb-0 h1 fs-3 ms-4">E-Cart</span>
+    <a class="btn btn-outline-danger me-4" href="logout">Log Out</a>
+  </div>
+</nav>
+{% comment %} banner {% endcomment %}
+<section class="py-2 py-xl-5">
+  <div class="container">
+    <div
+      class="bg-light rounded shadow-lg border-0 border-dark overflow-hidden"
+    >
+      <div class="row g-0">
+        <div class="col-md-6">
+          <div class="text-white p-4 p-md-5">
+            <h2 class="fw-bold text-danger mb-3 fs-1">
+              Welcome to<br />
+              ECART
+            </h2>
+            <p class="mb-4 fw-bold fs-4 text-danger">
+              You can shop home essentials, foods, toys and whatevers you want
+              from the ECART
+            </p>
+            <div class="my-3"></div>
+          </div>
+        </div>
+        <div
+          class="col-md-6 order-first order-md-last"
+          style="min-height: 250px"
+        >
+          <img
+            class="w-100 h-100 fit-cover"
+            src="https://img.freepik.com/free-vector/super-sale-horizontal-banner_52683-59532.jpg?w=2000"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% comment %} products {% endcomment %}
+<div class="container">
+  <div class="row m-5">
+    {% for pdt in pdts %}
+    <div class="card m-4" style="width: 18rem">
+      <img
+        src="{{pdt.img}}"
+        class="card-img-top img-thumbnail"
+        style="width: 100%; height: 15vw; object-fit: fit;"
+        alt="..."
+      />
+      <div class="card-body d-flex flex-column">
+        <h5 class="card-title">{{pdt.name}}</h5>
+        <p class="card-text">{{pdt.description}}</p>
+        <p class="card-text">Rs - {{pdt.price}}/-</p>
+        <div class="fixed-action-btn">
+          <a href="#" class="btn btn-primary mt-auto">Buy Now</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+
+
+{% endblock %}
