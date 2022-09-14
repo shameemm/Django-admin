@@ -3,14 +3,14 @@
 
 <nav class="navbar navbar-light bg-light border">
     <div class="container-fluid">
-      <a class="navbar-brand">Admin Home</a>
+      <a class="navbar-brand fw-bold">Admin Home</a>
       <div class="d-flex">
         <a class="btn btn-outline-success mx-5" href="adduser">Add User</a>
         <a class="btn btn-outline-success mx-5" href="adminout">Logout</a>
       </div>
       <form class="d-flex" action="adminhome" method='post'>
         {% csrf_token %}
-        <input class="form-control me-2" type="search" name ="search" placeholder="Search" aria-label="Search">
+        <input class="form-control me-2" type="search" name ="search" placeholder="Search Username" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
     </div>
@@ -25,12 +25,12 @@
   
   <table id="table_id" class="display table table-striped" style="width:100%;">
     <tr>
-      <th>id</th>
-      <th>name</th>
-      <th>email</th>
-      <th>username</th>
-      <th>edit</th>
-      <th>delete</th>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Username</th>
+      <th>Edit</th>
+      <th>Delete</th>
       
     </tr>
     {% for user in users%}

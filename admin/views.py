@@ -85,7 +85,7 @@ def adduser(request):
 def adminhome(request):
     if 'search' in request.POST:
         search = request.POST['search']
-        users = User.objects.filter(first_name__contains=search)
+        users = User.objects.filter(username__contains=search)
         if len(users)!=0:
             return render(request, 'admin_home.html',{'users':users})
         else:
